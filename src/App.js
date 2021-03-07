@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Main from "./components/Main";
+import Search from "./components/Search";
 
 function App() {
+  const [Movies, setMovies] = useState([]);
+
+  const getMovies = async (e) => {
+    const popularMoviesUrl =
+      "https://api.themoviedb.org/3/movie/popular?api_key=66f24d566eb6008394159f46c59d027e&language=en-US&page=1&include_adult=false";
+
+    try {
+      const res = await fetch(popularMoviesUrl);
+      const data = await res.json();
+      setMovies(data.results);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <h1>Movie App</h1>
+        <div>
+          <Search setMovies={setMovies} />
+        </div>
+      </div>
+      {Movies.filter((movie) => movie.poster_path).map((movie) => (
+        <Main movie={movie} key={movie.id} />
+      ))}
+    </>
   );
 }
 
