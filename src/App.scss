@@ -1,0 +1,208 @@
+/* Global Styling
+=============== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$grey-color: #343a40;
+$white-color: #f8f9fa;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: $white-color;
+  color: $grey-color;
+}
+
+h3 {
+  font-size: 1.6rem;
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
+}
+p {
+  font-size: 1.2rem;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+small {
+  font-size: 1rem;
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+  }
+}
+
+/* Removing Default Styling
+=============== */
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+/* Container
+=============== */
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Form 
+=============== */
+.form {
+  margin: 2rem;
+}
+
+.input {
+  width: 30%;
+  padding: 20px;
+  border-radius: 7px;
+
+  @media (max-width: 600px) {
+    width: 83%;
+    text-align: left;
+  }
+}
+
+.input[type="text"] {
+  padding: 10px;
+  border: 2px solid #cfdbd5;
+}
+
+.button-form {
+  margin: auto 1rem;
+  color: $grey-color;
+  background-color: transparent;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (max-width: 600px) {
+    width: 5%;
+  }
+}
+
+/* Button Group
+=============== */
+.button-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.button-list {
+  margin: auto 1rem;
+  padding: 5px 15px;
+  border: 2px solid #f5cb5c;
+  background-color: #f5cb5c;
+  color: #242423;
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 20px;
+
+  &:hover {
+    margin: auto 1rem;
+    padding: 5px 15px;
+    border: 2px solid #f5cb5c;
+    background-color: #f5cb5c;
+    color: #242423;
+    border-radius: 7px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 15px;
+  }
+}
+
+/* Posters
+=============== */
+.movie-container {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  margin: 3rem auto;
+}
+
+.poster:hover {
+  transform: scale(1.02);
+  transition: all 0.5s ease;
+  box-shadow: -20px 20px 60px #3c434a;
+  cursor: pointer;
+}
+
+/* Overlay
+=============== */
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+.modal-img > img {
+  object-fit: cover;
+  width: 100%;
+  position: relative;
+}
+
+.movie-details {
+  text-align: justify;
+  padding-bottom: 0.5rem;
+  small {
+    padding-right: 1rem;
+  }
+}
+
+.modal-text {
+  padding: 2rem 4rem;
+  text-align: justify;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  background-color: $white-color;
+
+  .modal-title {
+    margin-bottom: 0.5rem;
+  }
+  .modal-info {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: $white-color;
+  border-radius: 18px;
+  color: black;
+}

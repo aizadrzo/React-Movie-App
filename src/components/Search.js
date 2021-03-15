@@ -3,6 +3,10 @@ import React, { useState } from "react";
 function Search({ setMovies }) {
   const [query, setQuery] = useState("");
 
+  const resetField = () => {
+    setQuery("");
+  };
+
   const searchMovies = async (e) => {
     e.preventDefault();
 
@@ -15,6 +19,7 @@ function Search({ setMovies }) {
     } catch (err) {
       console.log(err);
     }
+    resetField();
   };
 
   return (
@@ -28,7 +33,9 @@ function Search({ setMovies }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         ></input>
-        <button type="submit">submit</button>
+        <button className="button-form" type="submit">
+          submit
+        </button>
       </form>
     </>
   );

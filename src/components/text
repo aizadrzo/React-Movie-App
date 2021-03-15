@@ -1,4 +1,0 @@
-  const popularMoviesUrl =
-    "https://api.themoviedb.org/3/movie/top_rated?api_key=66f24d566eb6008394159f46c59d027e&language=en-US&page=1&include_adult=false";
-
-    const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=66f24d566eb6008394159f46c59d027e&language=en-US&query=${query}&page=1&include_adult=false`;
