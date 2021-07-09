@@ -37,11 +37,6 @@ small {
   }
 }
 
-img {
-  width: 300px;
-  height: auto;
-}
-
 /* Removing Default Styling
 =============== */
 input[type="text"] {
@@ -72,7 +67,7 @@ button {
 /* Form 
 =============== */
 .form {
-  margin: 2rem;
+  margin: 2em;
 }
 
 .input {
@@ -92,7 +87,7 @@ button {
 }
 
 .button-form {
-  margin: auto 1rem;
+  margin: auto 1em;
   color: $grey-color;
   background-color: transparent;
   &:hover {
@@ -106,7 +101,7 @@ button {
 /* Button Group
 =============== */
 .button-group {
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -117,7 +112,7 @@ button {
 }
 
 .button-list {
-  margin: auto 1rem;
+  margin: auto 1em;
   padding: 5px 15px;
   border: 2px solid #f5cb5c;
   background-color: #f5cb5c;
@@ -128,7 +123,7 @@ button {
   font-size: 20px;
 
   &:hover {
-    margin: auto 1rem;
+    margin: auto 1em;
     padding: 5px 15px;
     border: 2px solid #f5cb5c;
     background-color: #f5cb5c;
@@ -138,9 +133,9 @@ button {
   }
 
   @media (max-width: 600px) {
-    margin-bottom: 0.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    margin-right: 2em;
     font-size: 15px;
   }
 }
@@ -155,11 +150,16 @@ button {
   margin: 3em auto;
 }
 
-.poster:hover {
-  transform: scale(1.02);
-  transition: all 0.5s ease;
-  box-shadow: -20px 20px 60px #3c434a;
-  cursor: pointer;
+.poster {
+  padding: 0;
+  max-height: 450px;
+  margin-bottom: 2em;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.5s ease;
+    box-shadow: -20px 20px 60px #3c434a;
+    cursor: pointer;
+  }
 }
 
 /* Overlay
@@ -168,35 +168,22 @@ button {
 .modal-content {
   display: flex;
   flex-direction: column;
-}
-.modal-img > img {
-  object-fit: cover;
-  width: 100%;
   position: relative;
+}
+.modal-img {
+  object-fit: cover;
+  max-height: 300px;
 }
 
 .movie-details {
-  text-align: justify;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.5em;
   small {
-    padding-right: 1rem;
+    padding-right: 1em;
   }
 }
 
 .modal-text {
-  padding: 2rem 4rem;
-  text-align: justify;
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  background-color: $white-color;
-
-  .modal-title {
-    margin-bottom: 0.5rem;
-  }
-  .modal-info {
-    margin-bottom: 0.5rem;
-  }
+  padding: 1em;
 }
 
 .modal > .close {
@@ -207,6 +194,7 @@ button {
   line-height: 20px;
   right: -10px;
   top: -10px;
+  z-index: 9999;
   font-size: 24px;
   background: $white-color;
   border-radius: 18px;
