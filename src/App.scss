@@ -5,16 +5,16 @@
 $grey-color: #343a40;
 $white-color: #f8f9fa;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
+:root {
   font-family: "Roboto", sans-serif;
   background-color: $white-color;
   color: $grey-color;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h3 {
@@ -37,6 +37,11 @@ small {
   }
 }
 
+img {
+  width: 300px;
+  height: auto;
+}
+
 /* Removing Default Styling
 =============== */
 input[type="text"] {
@@ -54,6 +59,7 @@ button:focus {
 
 button {
   border: none;
+  background: none;
 }
 
 /* Container
@@ -143,10 +149,10 @@ button {
 =============== */
 .movie-container {
   display: grid;
-  gap: 70px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   place-items: center;
-  margin: 3rem auto;
+  margin: 3em auto;
 }
 
 .poster:hover {
