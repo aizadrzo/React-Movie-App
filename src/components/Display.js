@@ -25,9 +25,9 @@ function Display({ movie }) {
         onClose={closeModal}
       >
         <div className="modal">
-          <a className="close" onClick={closeModal}>
+          <button className="close" onClick={closeModal}>
             &times;
-          </a>
+          </button>
           <div className="modal-content">
             <img
               className="modal-img"
