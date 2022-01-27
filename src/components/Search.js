@@ -34,7 +34,7 @@ function Search({ setMovies }) {
           onChange={(e) => setQuery(e.target.value)}
         ></input>
         <button className="button-form" type="submit">
-          submit
+          Search
         </button>
       </form>
     </>
